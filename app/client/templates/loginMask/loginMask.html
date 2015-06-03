@@ -1,0 +1,12 @@
+<template name="loginMask">
+    {{#unless currentUser}}
+        <img class="intro-image" src="//placehold.it/300x300" alt="placeholder" />
+        <p>Connect with Instagram and upload an image</p>
+        <button class="login-with-instagram-button">Connect with Instagram</button>
+    {{/unless}}
+    {{#if currentUser}}
+        <img class="intro-image" src="{{currentUser.profile.picture}}" alt="{{currentUser.profile.name}}" />
+        <p>Welcome {{currentUser.profile.name}}</p>
+        <button class="logout">logout</button>
+    {{/if}}
+</template>

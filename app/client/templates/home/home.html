@@ -1,0 +1,20 @@
+<template name="home">
+    <div class="intro">
+        {{> loginMask }}
+    </div>
+    <div class="theWall">
+        <div class="the-grid">
+            {{> theWall}}
+        </div>
+    </div>
+</template>
+
+<template name="theWall">
+        {{#each WallImages}}
+        <div class="image-container small">
+            <figure class="home-figure">
+                <img class="image-chooser" src="{{standard_resolution.url}}"/>
+            </figure>
+        </div>
+        {{/each}}
+</template>

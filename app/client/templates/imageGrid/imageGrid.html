@@ -1,0 +1,26 @@
+<template name="imageGrid">
+    <div class="image-grid">
+        <div class="the-grid">
+            {{#if currentUser}}
+                {{#each InstagramImages}}
+                <div class="image-container">
+                    <figure>
+                        {{> checkmark this }}
+                        <img class="image-chooser" data-instagram-id="{{id}}" data-high-resolution="{{images.standard_resolution.url}}" src="{{images.low_resolution.url}}"/>
+                    </figure>
+                </div>
+                {{/each}}
+            {{/if}}
+        </div>
+    </div>
+</template>
+
+<template name="checkmark">
+    <span class="{{#if inCollection}} inCollection {{else}} checkmark {{/if}}" data-instagram-id="{{../id}}" data-this="{{ WhatIs.id }}">x</span>
+</template>
+<!--
+getFbImages: (facebookId, accessToken) ->
+    accessToken
+    Meteor.http.call "GET", "https://graph.facebook.com/v2.3/" + facebookId + '/?accessToken=' + accessToken, (err, res) ->
+    -->
+
