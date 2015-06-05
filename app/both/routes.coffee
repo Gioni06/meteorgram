@@ -1,5 +1,7 @@
 Router.configure
   layoutTemplate: 'app'
+  waitOn:() ->
+    Accounts.loginServicesConfigured()
 
 Router.route '/home', () ->
   @render 'home',
