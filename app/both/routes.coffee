@@ -1,11 +1,12 @@
 Router.configure
   layoutTemplate: 'app'
-  waitOn:() ->
-    Accounts.loginServicesConfigured()
+  loadingTemplate: 'loading'
+  waitOn: ->
+    Accounts.loginServicesConfigured
 
-Router.route '/home', () ->
-  @render 'home',
-    data: ()-> 'hello from Home'
+Router.route 'home',
+  path: '/home'
+  template: 'home'
 
 Router.route '/choose', () ->
   @render 'choose',
